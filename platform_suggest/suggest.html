@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform suggestion</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: orange;
+            padding: 10px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: orange;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="../student_profile/profiles.html">Home</a>
+        <a href="../student_profile/timetable.html">Timetable</a>
+        <a href="../index.html" onclick="showPopup()">Logout</a>
+    </div>
+
+    <table>
+        <tr>
+            <th>Classes</th>
+            <th>Platform URL</th>
+        </tr>
+        <tr>
+            <td>6th standard</td>
+            <td><a href="sixth.html">link for platforms</a></td>
+        </tr>
+        <tr>
+            <td>7th standard</td>
+            <td><a href="seventh.html">link for platforms</a></td>
+        </tr>
+        <tr>
+            <td>8th standard</td>
+            <td><a href="eight.html">link for platforms</a></td>
+        </tr>
+        <tr>
+            <td>9th standard</td>
+            <td><a href="ninth.html">link for platforms</a></td>
+        </tr>
+        <tr>
+            <td>10th standard</td>
+            <td><a href="tenth.html">link for platforms</a></td>
+        </tr>
+        <tr>
+            <td>11th standard</td>
+            <td><a href="eleventh.html">link for platforms</a></td>
+        </tr>
+        <tr>
+            <td>12th standard</td>
+            <td><a href="twelfth.html">link for platforms</a></td>
+        </tr>
+    </table>
+
+    <script>
+        function showPopup() 
+         {
+            alert("You have successfully logged out!");
+         }
+      </script>
+
+</body>
+</html>

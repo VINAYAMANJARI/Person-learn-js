@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+
+    .navbar {
+    background-color: orange;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+  .navbar-text {
+    margin-right: auto;
+  }
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar li {
+    margin-right: 20px;
+  }
+  .navbar li:last-child {
+    margin-right: 0;
+  }
+  .navbar a {
+    text-decoration: none;
+    color: white;
+  }
+  .navbar .navbar-text li a:hover{
+    color:rgb(212, 139, 4);
+  }
+
+    .container {
+        max-width: 400px;
+        margin: 100px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    /* input[type="submit"]*/ #b1 { 
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+    /* input[type="submit"] */
+    #b1
+    { 
+        background-color: rgb(249, 176, 67);
+        color: white;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    /* input[type="submit"]*/#b1:hover { 
+        background-color: rgb(249, 176, 67);
+    }
+    .forgot-password {
+        text-align: center;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body class="login" id="login">
+
+    <div class="navbar">
+        <div class="navbar-text">JANVIN</div>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+        </ul>
+      </div>        
+
+<div class="container">
+    <h2>Login</h2>
+    <form action="">
+        <input type="text" placeholder="Username" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <!-- <input type="submit" value="Login"> -->
+        <button id="b1"><a href="../student_profile/profiles.html">Submit</a></button>
+    </form>
+    <p class="forgot-password">Forgot your password? <a href="#">Reset it here</a>.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subject Performance</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+    background-color: orange;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+
+  .navbar-text {
+    margin-right: auto;
+  }
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar li {
+    margin-right: 20px;
+  }
+  .navbar li:last-child {
+    margin-right: 0;
+  }
+  .navbar a {
+    text-decoration: none;
+    color: white;
+  }
+  .navbar .navbar-text li a:hover{
+    color:rgb(212, 139, 4);
+  }
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"],
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #fe911c;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #output {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="navbar">
+    <div class="navbar-text">JANVIN</div>
+    <ul>
+        <li><a href="../student_profile/profiles.html">Home</a></li>
+        <li><a href="../platform_suggest/suggest.html">Platform</a></li>
+        <li><a href="../index.html" onclick="showPopup()">Logout</a></li>
+      </ul>
+</div>
+<div class="container">
+    <h2>Enter Number of Subjects</h2>
+    <form id="subjectForm">
+        <input type="number" id="numSubjects" placeholder="Number of Subjects" required>
+        <input type="submit" value="Submit">
+    </form>
+    <div id="marksForm" style="display: none;">
+        <h2>Enter Marks</h2>
+    </div>
+    <div id="output"></div>
+    <button id="generateTimetableBtn" style="display: none;" onclick="generateTimetable()">Generate Timetable</button>
+</div>
+
+
+<script>
+document.getElementById("subjectForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var numSubjects = parseInt(document.getElementById("numSubjects").value);
+    if (numSubjects > 0) {
+        var formHtml = '<form id="marksForm">';
+        for (var i = 1; i <= numSubjects; i++) {
+            formHtml += '<input type="text" class="subjectName" placeholder="Subject ' + i + ' Name" required>';
+            formHtml += '<input type="number" class="markInput" placeholder="Subject ' + i + ' Marks" required>';
+        }
+        formHtml += '<input type="submit" value="Submit"></form>';
+        document.getElementById("marksForm").innerHTML = formHtml;
+        document.getElementById("marksForm").style.display = "block";
+    } else {
+        document.getElementById("output").innerHTML = "Please enter a valid number of subjects.";
+    }
+});
+
+document.getElementById("marksForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var subjectNames = document.getElementsByClassName("subjectName");
+    var marksInputs = document.getElementsByClassName("markInput");
+    var results = {};
+    for (var i = 0; i < subjectNames.length; i++) {
+        var subjectName = subjectNames[i].value;
+        var mark = parseFloat(marksInputs[i].value);
+        results[subjectName] = getPerformance(mark);
+    }
+    var outputHtml = "";
+    for (var subject in results) {
+        outputHtml += subject + ": " + results[subject] + "<br>";
+    }
+    document.getElementById("output").innerHTML = outputHtml;
+    document.getElementById('generateTimetableBtn').style.display = 'block';
+});
+
+function getPerformance(mark) {
+    if (mark < 50) {
+        return "Low";
+    } else if (mark >= 50 && mark <= 80) {
+        return "Average";
+    } else {
+        return "Good";
+    }
+}
+function generateTimetable() {
+  // Assuming redirection to another page named timetable.html
+  window.location.href = 'timetable.html';
+}
+
+
+  function showPopup() 
+   {
+      alert("You have successfully logged out!");
+   }
+
+
+</script>
+
+</body>
+</html>
+

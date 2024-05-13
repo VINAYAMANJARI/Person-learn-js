@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orange Navbar</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  .navbar {
+    background-color: orange;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+  .navbar-text {
+    margin-right: auto;
+  }
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar li {
+    margin-right: 20px;
+  }
+  .navbar li:last-child {
+    margin-right: 0;
+  }
+  .navbar a {
+    text-decoration: none;
+    color: white;
+  }
+  .navbar .navbar-text li a:hover{
+    color:rgb(212, 139, 4);
+  }
+
+  #i1
+  {
+    width: 400px;
+    height: 300px;
+    float: right;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="navbar-text">JANVIN</div>
+  <ul>
+    <li><a href="markcalculation.html">Mark</a></li>
+    <li><a href="timetable.html">Timetable</a></li>
+    <li><a href="../platform_suggest/suggest.html">Platform</a></li>
+    <li><a href="../index.html" onclick="showPopup()">Logout</a></li>
+  </ul>
+</div>
+
+
+<img id="i1" src="online_learning.jpg" alt="onlin_learning">
+
+<h2 style="color: orange;">Welcome user!</h2>
+<p>Here, you are encouraged to enrich your knowledge and upscale your career. Dive into our resources, 
+engage with our community, and embark on a journey of continuous learning and growth.</p>
+<p>This is your account's home page. You can navigate to other pages through this page.</p>
+<br>
+<p>**Select any of the above options to enter marks,generate timetable, and you have access 
+to free online learning platforms**</p>
+
+
+<script>
+  function showPopup() 
+   {
+      alert("You have successfully logged out!");
+   }
+</script>
+</body>
+</html>
